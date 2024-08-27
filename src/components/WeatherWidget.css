@@ -1,0 +1,22 @@
+/* src/components/WeatherWidget.css */
+
+.weather-widget {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 8px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.weather-widget h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.weather-widget p {
+  margin: 5px 0;
+}

@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Agbalumo';
+  src: url('../assets/fonts/Agbalumo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DancingScript';
+  src: url('../assets/fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the title */
+}
+
+.header-icon {
+  position: absolute;
+  left: 20px; /* Move the icon to the right side */
+}
+
+.logo-icon {
+  width: 65px;
+  border-radius: 5px;
+  height: auto;
+}
+.header-icon2 {
+  position: absolute;
+  right: 25px; /* Move the icon to the right side */
+}
+
+.logo-icon2 {
+  width: 50px;
+  border-radius: 5px;
+  height: auto;
+}
+
+.header h1 {
+  font-family: 'Agbalumo', sans-serif; /* Roboto fontunu kullanıyoruz */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header nav {
+  position: absolute;
+  left: 120px; /* Adjust this value to position the nav items */
+}
+
+.header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.header nav ul li {
+  margin-right: 15px;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
