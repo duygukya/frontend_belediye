@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-im 
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import icon2 from '../assets/icons/calendar.png'; 
 import icon4 from '../assets/icons/landline.png'; 
 import icon5 from '../assets/icons/home-page.png';
 import icon6 from '../assets/icons/testing.png';
-
 import icon8 from '../assets/icons/cloud.png';
-import defaultProfilePicture from  '../assets/icons/users.png';;  // Import the default image
+import defaultProfilePicture from '../assets/icons/users.png';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -76,33 +81,72 @@ const Sidebar = () => {
         </button>
       </div>
 
-      {isBirthdayDialogOpen && (
-        <div className="dialog-overlay">
-          <div className="dialog-box">
-            <button className="close-button" onClick={closeBirthdayDialog}>&times;</button>
-            <h2>Doğum Günü Olan Kişiler</h2>
+      <Dialog
+        open={isBirthdayDialogOpen}
+        onClose={closeBirthdayDialog}
+        sx={{
+          '& .MuiBackdrop-root': {
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          },
+          '& .MuiPaper-root': {
+            backgroundColor: '#f3f0f0',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+            width: '600px',
+            textAlign: 'center',
+            color: '#000',
+          },
+        }}
+      >
+        <DialogTitle sx={{ position: 'relative' }}>
+          Doğum Günü Olan Kişiler
+          <IconButton
+            aria-label="close"
+            onClick={closeBirthdayDialog}
+            sx={{
+              position: 'absolute',
+              right: 8,
+              top: 8,
+              backgroundColor: 'transparent',
+              border: 'none',
+              fontSize: '20px',
+              cursor: 'pointer',
+              color: '#000',
+              transition: 'color 0.3s ease',
+              '&:hover': {
+                color: '#ff0000',
+              },
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent dividers>
+          {birthdayPersons.length > 0 ? (
             <div className="birthday-person-container">
-              {birthdayPersons.length > 0 ? (
-                birthdayPersons.map((person, index) => (
-                  <div key={index} className="birthday-person">
-                    <img 
-                      src={person.Resim} 
-                      alt={`${person.Adi || ''} ${person.Soyadi || ''}`} 
-                      className="birthday-person-image" 
-                    />
-                    <p><strong>{person.Adi || ''} {person.Soyadi || ''}</strong></p>
-                    <p>{person.Unvani || ''}</p>
-                  </div>
-                ))
-              ) : (
-                <p>Bugün doğum günü olan kimse yok.</p>
-              )}
+              {birthdayPersons.map((person, index) => (
+                <div key={index} className="birthday-person">
+                  <img 
+                    src={person.Resim} 
+                    alt={`${person.Adi || ''} ${person.Soyadi || ''}`} 
+                    className="birthday-person-image" 
+                  />
+                  <p><strong>{person.Adi || ''} {person.Soyadi || ''}</strong></p>
+                  <p>{person.Unvani || ''}</p>
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-      )}
+          ) : (
+            <p>Bugün doğum günü olan kimse yok.</p>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={closeBirthdayDialog}>Kapat</Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
-};
+}; 
 
 export default Sidebar;

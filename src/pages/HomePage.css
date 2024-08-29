@@ -65,9 +65,9 @@
 .announcement-box {
   height: 250px;
   width: 250px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.6) !important;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 18px !important;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -76,7 +76,7 @@
 
 .announcement-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .announcement-image {
@@ -87,6 +87,7 @@
 
 .announcement-content {
   padding: 15px;
+  
   text-align: center;
   max-height: 50%;
   overflow: hidden;
@@ -100,6 +101,7 @@
   z-index: 10;
   width: 290px;
   height: 360px;
+  
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
 
@@ -108,12 +110,18 @@
   margin-top: 10px;
   color: #666;
 }
+.announcement-title {
+  font-size: 20px !important; /* Adjust the size as needed */
+  font-weight:600 !important; /* Make the title bold */
+  font-style: italic;
+}
+
 
 .announcement-box.active .announcement-description {
   display: block;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 15px;
   max-height: 180px;
   overflow-y: auto;
 }
@@ -130,15 +138,16 @@
 
 .ataturk-container {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10px; /* Space from the bottom */
+  right: 10px; /* Space from the right */
+  width: 250px; /* Fixed width */
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  margin: 10px;
+  border-radius: 10px;
+  /* Remove margin if it's causing layout issues */
 }
 
 .ataturk-image {
@@ -151,7 +160,11 @@
   margin-top: 6px;
   font-style: italic;
   text-align: center;
+  /* Ensure the quote fits within the container */
+  word-wrap: break-word;
 }
+
+
 
 
 

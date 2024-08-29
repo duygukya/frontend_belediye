@@ -9,60 +9,42 @@
   margin-top: 100px;
 }
 
+.survey-image {
+  width: 80%;
+  height: auto;
+}
+
 .survey-box {
-  width: 150px !important; /* Daha küçük boyut için genişlik ayarı */
-  height: 150px !important; /* Daha küçük boyut için yükseklik ayarı */
+  width:200px; /* Sabit genişlik */
+  height:auto;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 15px;
   background-color: rgba(249, 249, 249, 0.8); /* Hafif transparan arka plan */
-  background-image: url('../assets/icons/survey.png'); /* İkonun yolu */
   background-size: 50px 50px; /* İkon boyutunu ayarlayın */
   background-position: center; /* İkonu kutu içinde ortalayın */
   background-repeat: no-repeat; /* İkon tekrarını engelleyin */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Başlık, açıklama ve düğme arasında boşluk oluşturur */
-  position: relative; /* Düğmeyi konumlandırmak için relative yapıldı */
-  overflow: hidden; /* Düğmeyi gizli tutmak için overflow kullanıldı */
-  transition: background-color 0.3s ease; /* Arka plan rengi için geçiş efekti */
-}
-
-.survey-box:hover {
-  background-color: transparent; /* Üzerine gelindiğinde arka planı gizle */
+  align-items: center; /* İçerikleri ortalar */
+  cursor: pointer; /* Üzerine gelindiğinde işaretçi değişir */
 }
 
 .survey-title {
   font-size: 14px; /* Font boyutunu ayarlayın */
   font-weight: bold;
-  margin-bottom: 50px; /* Marjin ayarlandı */
+  margin-bottom: 10px; /* Başlık ve açıklama arasında boşluk */
+  text-align: center; /* Başlığı ortalar */
 }
 
-.survey-description {
-  font-size: 12px; /* Font boyutunu ayarlayın */
+.dialog-survey-image {
+  width: 20%;
+  height: auto;
   margin-bottom: 10px;
-  flex-grow: 1; /* Boş alanı doldurmak için kullanıldı */
 }
 
-.survey-button {
-  background-color: #f5618d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 10px;
-  cursor: pointer;
-  font-size: 12px; /* Font boyutunu ayarlayın */
-  position: absolute; /* Düğmeyi konumlandırmak için absolute yapıldı */
-  bottom: 10px; /* Düğmeyi kutunun altına yerleştirin */
-  right: 10px; /* Düğmeyi sağ tarafa yerleştirin */
-  opacity: 0; /* Başlangıçta düğmeyi gizleyin */
-  transition: opacity 0.3s ease; /* Düğme görünürlüğü için geçiş efekti */
-}
 
-.survey-box:hover .survey-button {
-  opacity: 1; /* Üzerine gelindiğinde düğmeyi göster */
-}
 
 body {
   margin: 0;
@@ -75,4 +57,25 @@ body {
   height: 100vh; /* Tüm görüntüleme alanı yüksekliğini kaplar */
   width: 100vw; /* Tüm görüntüleme alanı genişliğini kaplar */
   overflow-x: hidden; /* Yatay kaydırmayı engeller */
+}
+.dialog-button-close {
+  border: 3px solid #ffffff !important; /* Red border */
+  background-color: #be0000 !important; /* Red text color */
+  color: #ffffff !important;
+}
+
+.dialog-button-solve {
+  border: 3px solid #ffffff !important; /* Green border */
+  background-color: #006803 !important; /* Green text color */
+  color: #ffffff !important;
+}
+
+.dialog-button-close:hover {
+  background-color: #bb6d6d !important; /* Red background on hover */
+  color: rgb(255, 255, 255); /* White text on hover */
+}
+
+.dialog-button-solve:hover {
+  background-color: #78d07d !important; /* Green background on hover */
+  color: rgb(64, 214, 30); /* White text on hover */
 }

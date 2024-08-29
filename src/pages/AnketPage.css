@@ -1,9 +1,9 @@
-/* AnketPage.css */
+
 
 .submit-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Adjust as needed to position the button */
+    margin-top: 20px; 
   }
   
   .submit-button {

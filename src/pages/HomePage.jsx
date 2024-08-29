@@ -8,6 +8,7 @@ import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Card, CardMe
 import { CSSTransition } from 'react-transition-group';
 import './HomePageAnimations.css'; 
 import ataturkImage from '../assets/images/m.png'
+
 const HomePage = () => { 
   const [announcements, setAnnouncements] = useState([]);
   const [mainAnnouncement, setMainAnnouncement] = useState(null);
@@ -130,7 +131,11 @@ const HomePage = () => {
                 alt={mainAnnouncement.title}
               />
               <CardContent>
-                <Typography variant="h5" component="div">
+                <Typography 
+                  variant="h6" 
+                  component="div" 
+                  className="announcement-title"
+                >
                   {mainAnnouncement.title}
                 </Typography>
               </CardContent>
@@ -150,7 +155,11 @@ const HomePage = () => {
                 alt={announcement.title}
               />
               <CardContent>
-                <Typography variant="h5" component="div">
+                <Typography 
+                  variant="h6" 
+                  component="div" 
+                  className="announcement-title"
+                >
                   {announcement.title}
                 </Typography>
               </CardContent>
@@ -174,22 +183,21 @@ const HomePage = () => {
           }}
         >
          <DialogTitle className="dialog-title">{selectedAnnouncement?.title}</DialogTitle>
-<DialogContent className="dialog-content-text">
-  <img 
-    src={getImageUrl(selectedAnnouncement?.duyuruResimler[0]?.resim)} 
-    alt={selectedAnnouncement?.title} 
-    style={{ width: '100%', height: 'auto' }}
-  />
-  <Typography variant="body1" className="dialog-content-text">
-    {selectedAnnouncement?.content}
-  </Typography>
-</DialogContent>
-
-          <DialogActions>
-            <Button onClick={closeMainAnnouncementDialog} color="primary">
-              Kapat
-            </Button>
-          </DialogActions>
+         <DialogContent className="dialog-content-text">
+           <img 
+             src={getImageUrl(selectedAnnouncement?.duyuruResimler[0]?.resim)} 
+             alt={selectedAnnouncement?.title} 
+             style={{ width: '100%', height: 'auto' }}
+           />
+           <Typography variant="body1" className="dialog-content-text">
+             {selectedAnnouncement?.content}
+           </Typography>
+         </DialogContent>
+         <DialogActions>
+           <Button onClick={closeMainAnnouncementDialog} color="primary">
+             Kapat
+           </Button>
+         </DialogActions>
         </Dialog>
       </CSSTransition>
 
@@ -208,10 +216,9 @@ const HomePage = () => {
           }}
         >
           <DialogTitle className="dialog-title">Çözmeniz Gereken Anketler Var:</DialogTitle>
-<DialogContent>
-  <Typography variant="h6" className="survey-title">{surveyTitle}</Typography>
-</DialogContent>
-
+          <DialogContent>
+            <Typography variant="h6" className="survey-title">{surveyTitle}</Typography>
+          </DialogContent>
           <DialogActions>
             <Button onClick={() => window.location.href = surveyUrl} color="primary">
               Çöz
@@ -227,7 +234,7 @@ const HomePage = () => {
       <div className="ataturk-container">
         <img src={ataturkImage} alt="Atatürk" className="ataturk-image" />
         <div className="ataturk-quote">
-          "Egemenlik, kayıtsız şartsız milletindir."
+          "Kendiniz için değil, bağlı bulunduğunuz ulus için elbirliği ile çalışınız. Çalışmaların en yükseği budur."
         </div>
       </div>
     </div>
